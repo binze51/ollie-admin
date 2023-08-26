@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import  { Suspense } from "react";
 import { Layout } from "@douyinfe/semi-ui";
 import Header from "@src/layout/header";
 import Sider from "@src/layout/sider";

@@ -12,12 +12,9 @@ type Request = {
 //通用请求回调
 export async function generalHttpHandler({path, method, body}: Request) {
   const  _handler= instance({
-    method: "post",
-    url:  "/v3/login",
-    data: {
-      "username": "jojo",
-      "password": "aa123456",
-    }
+    method: method,
+    url: path,
+    data: body,
   })
   return _handler
 }

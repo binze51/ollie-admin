@@ -19,7 +19,8 @@ npm i
 buf generate
 4. 开发模式运行项目
 npm run dev
-
+5. caddy服务镜像构建
+make imagebuildpublish
 ### 使用飞书扫码免密登录
 1. 开放登录页，仅本公司的飞书组织成员可以正常扫
 
