@@ -1,7 +1,7 @@
 ### First Stage ###
 FROM node:18.17.1-slim AS builder
-
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 COPY package.json .
 
@@ -13,11 +13,17 @@ RUN npm run build
 
 ### Second Stage ###
 FROM caddy:2.7.4-alpine
+RUN mkdir -p /app
+WORKDIR /app
+ARG SERVICE
+ARG VERSION
+ARG GIT_COMMIT
 
-ARG CADDYFILE
-COPY ${CADDYFILE} /etc/caddy/Caddyfile
+ENV SERVICE=${SERVICE}
+ENV VERSION=${VERSION}
+ENV GIT_COMMIT=${GIT_COMMIT}
 
-COPY --from=builder /usr/src/app/dist/ /srv
+COPY --from=builder /app/dist/ /app/srv
 
 EXPOSE 80
 

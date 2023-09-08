@@ -1,6 +1,6 @@
 import { Space, Card ,Tag,} from "@douyinfe/semi-ui";
 import { useEffect, useLayoutEffect, useRef} from "react";
-import { createAccountServiceClient} from "@proto_gen/account";
+import { createAccountClient} from "@pb_gen/account";
 import { Toast } from "@douyinfe/semi-ui";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@src/context/auth";
@@ -53,7 +53,7 @@ export default function loginPage() {
       //获取code+redirect_uri后发起后端接口调用，获取后端token和用户信息TODO
       const queryParams = new URLSearchParams(window.location.search);
       const fetchData=async () => {
-        const {info,status } = await createAccountServiceClient(generalHttpHandler).LoginQR({redirectUrl:redirect_uri,code:queryParams.get("code") as string});
+        const {info,status } = await createAccountClient(generalHttpHandler).LoginQR({redirectUrl:redirect_uri,code:queryParams.get("code") as string});
         if (status?.code === 0) {
           auth.signin(info);
           Toast.success("登录成功！");

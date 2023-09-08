@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@src": resolve(__dirname, "./src"),
-      "@proto_gen": resolve(__dirname, "./proto_gen"),
+      "@pb_gen": resolve(__dirname, "./pb_gen"),
       "@assets": resolve(__dirname, "./src/assets"),
       "@components": resolve(__dirname, "./src/components"),
       "@pages": resolve(__dirname, "./src/pages"),

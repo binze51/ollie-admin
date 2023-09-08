@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-#proto_gen
-proto_gen
+#pb_gen
+pb_gen
+pb

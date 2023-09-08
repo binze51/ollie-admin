@@ -3,5 +3,5 @@ managed:
   enabled: false
 plugins:
   - plugin: typescript-http
-    out: proto_gen
+    out: pb_gen
     opt: paths=source_relative
