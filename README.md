@@ -1,4 +1,4 @@
-# OLLIE ADMIN
+# RELEASE ADMIN
 
 基于抖音reactUI [semi desgin](https://semi.design/zh-CN) + vite4 + typescript + react18 + zustand + tailwindcss 构建
 

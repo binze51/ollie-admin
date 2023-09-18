@@ -11,7 +11,7 @@ GIT_COMMIT := $(shell git rev-parse --short HEAD)
 REGISTRY := ccr.ccs.tencentyun.com
 NS_GROUP := binze
 DOCKERFILE := Dockerfile
-service := ollie-admin
+service := release-admin
 
 ### image build push ###
 imagebuildpublish: ## [PODMAN BUIDL AND PUSH] ,example: `make imagebuildpublish`
