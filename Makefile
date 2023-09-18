@@ -18,5 +18,5 @@ imagebuildpublish: ## [PODMAN BUIDL AND PUSH] ,example: `make imagebuildpublish`
 	@buf generate
 	@echo 'publish $(VERSION) to $(REGISTRY)'
 	@podman login ccr.ccs.tencentyun.com --username=100012015939
-	@podman build -f $(DOCKERFILE) --build-arg SERVICE=$(service) --build-arg VERSION=$(VERSION) --build-arg GIT_COMMIT=$(GIT_COMMIT) -t $(REGISTRY)/$(NS_GROUP)/$(service):$(VERSION) .
-	@podman push $(REGISTRY)/$(NS_GROUP)/$(service):$(VERSION)
+	@podman build -f $(DOCKERFILE) --build-arg SERVICE=$(service) --build-arg VERSION=$(VERSION) --build-arg GIT_COMMIT=$(GIT_COMMIT) -t $(REGISTRY)/$(NS_GROUP)/pop-$(service):$(VERSION) .
+	@podman push $(REGISTRY)/$(NS_GROUP)/pop-$(service):$(VERSION)
