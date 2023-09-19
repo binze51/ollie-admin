@@ -52,7 +52,6 @@ export default function loginPage() {
     if (window.location.search.indexOf('code') !== -1){
       //获取code+redirect_uri后发起后端接口调用，获取后端token和用户信息TODO
       const queryParams = new URLSearchParams(window.location.search);
-      console.log("qr---",queryParams)
       const fetchData=async () => {
         const {info,status } = await createAccountClient(generalHttpHandler).LoginQR({redirectUrl:redirect_uri,code:queryParams.get("code") as string});
         if (status?.code === 0) {
