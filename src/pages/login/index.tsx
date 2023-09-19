@@ -7,7 +7,7 @@ import { useAuth } from "@src/context/auth";
 import { generalHttpHandler } from "@utils/http";
 
 const appId ="cli_a441f47133ba500c";
-const redirect_uri = `${window.location.origin}/login`;
+const redirect_uri = `${window.location.origin}/`;
 
 export default function loginPage() {
   const QRLoginObj=useRef(null);
@@ -40,7 +40,7 @@ export default function loginPage() {
       const origin = event.origin;
       // @ts-ignore
       if (QRLoginObj?.current?.matchOrigin(origin)
-        && window.location.href.indexOf('/login') > -1
+        && window.location.href.indexOf('/') > -1
       ) {
         if (window.location.search.indexOf('code') !== -1) return;
         const loginTmpCode = event.data;
